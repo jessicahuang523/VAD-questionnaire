@@ -18,3 +18,29 @@ function showBorder(id){
     document.getElementById(id).style.borderStyle="solid";
     document.getElementById(raID).checked = true;
 }
+
+function validate(dim){
+    var best, worst;
+    bName = dim + "-b";
+    wName = dim + "-w";
+    bList = document.getElementsByName(bName);
+    wList = document.getElementsByName(wName);
+    for (b=0; b<bList.length; b++){
+        if(bList[b].checked == true){
+            best = bList[b];
+            break;
+        }
+    }
+    for (w=0; w<wList.length; w++){
+        if(wList[w].checked == true){
+            worst = wList[w];
+            break;
+        }
+    }
+    if(best==null || worst==null){
+        alert("You have to answer both questions!");
+    }
+    if(best.value == worst.value){
+        alert("Please choose two different GIFs!");
+    }
+}
