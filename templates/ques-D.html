@@ -31,16 +31,16 @@
           <input name="d-b" type="radio" value="" id="d-b-D-ra"/><video src="" playsinline autoplay muted loop width=200px name="d-b" id="d-b-D" onclick="showBorder(this.id)"></video>
           </div>
       </fieldset>
-          <p>Note: Two choices cannot be the same!</p>
-          <!---<button type="submit" onclick="validate(d)">Submit</button>-->
+          <p>Note: Two choices cannot be the same! You have to answer both questions!</p>
+          <button type="submit" disabled="true">Submit</button>
   </form>
   <script language='Javascript'>
     window.onload = function() {
       turkSetAssignmentID();
-      gifA = decodeURI(decodeURIComponent(turkGetParam('gifA', 'Cannot find A')));
-      gifB = decodeURI(decodeURIComponent(turkGetParam('gifB', 'Cannot find B')));
-      gifC = decodeURI(decodeURIComponent(turkGetParam('gifC', 'Cannot find C')));
-      gifD = decodeURI(decodeURIComponent(turkGetParam('gifD', 'Cannot find D')));
+      var gifA = decodeURI(decodeURIComponent(turkGetParam('gifA', 'Cannot find A')));
+      var gifB = decodeURI(decodeURIComponent(turkGetParam('gifB', 'Cannot find B')));
+      var gifC = decodeURI(decodeURIComponent(turkGetParam('gifC', 'Cannot find C')));
+      var gifD = decodeURI(decodeURIComponent(turkGetParam('gifD', 'Cannot find D')));
       document.getElementById("d-w-A").src = "../static/" + gifA + ".mp4";
       document.getElementById("d-w-A-ra").value = gifA;
       document.getElementById("d-w-B").src = "../static/" + gifB + ".mp4";

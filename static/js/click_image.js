@@ -1,6 +1,8 @@
+var best, worst;
+
 function showBorder(id){
-    orgID = id.slice(0, -2);
-    tags = document.getElementsByName(orgID);
+    var name = id.slice(0, -2);
+    var tags = document.getElementsByName(name);
     for (t=0; t<tags.length; t++){
         tag = tags[t]
         if(tag.style.borderColor == "red"){
@@ -13,34 +15,27 @@ function showBorder(id){
             tag.checked == false;
         }
     }
-    raID = id.concat("-ra");
+    var raID = id.concat("-ra");
     document.getElementById(id).style.borderColor="red";
     document.getElementById(id).style.borderStyle="solid";
     document.getElementById(raID).checked = true;
+
+    if(name.charAt(2) == "b"){
+        best = document.getElementById(raID).value;
+    }
+    else if(name.charAt(2) == "w"){
+        worst = document.getElementById(raID).value;
+    }
+
+    val(best, worst);
 }
 
-function validate(dim){
-    var best, worst;
-    bName = dim + "-b";
-    wName = dim + "-w";
-    bList = document.getElementsByName(bName);
-    wList = document.getElementsByName(wName);
-    for (b=0; b<bList.length; b++){
-        if(bList[b].checked == true){
-            best = bList[b];
-            break;
-        }
+function val(b, w){
+    if(b!=undefined && w!=undefined && b!=w){
+        console.log(b,w);
+        document.getElementsByTagName("button")[0].disabled = false;
     }
-    for (w=0; w<wList.length; w++){
-        if(wList[w].checked == true){
-            worst = wList[w];
-            break;
-        }
-    }
-    if(best==null || worst==null){
-        alert("You have to answer both questions!");
-    }
-    if(best.value == worst.value){
-        alert("Please choose two different GIFs!");
+    else{
+        document.getElementsByTagName("button")[0].disabled = true;
     }
 }
