@@ -12,7 +12,7 @@
       <fieldset>
           <div style="float:left">
           <h3>Click on one of the four GIFs that best describes the left most image.</h3>
-          <h4>(submissive / controlled by outside factors / weak / influenced / car"for / guided)</h4>
+          <h4 id="des-w"></h4>
           <input name="w" type="radio" value="" id="w-A-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-A" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
           <input name="w" type="radio" value="" id="w-B-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-B" onclick="showBorder(this.id)"></video><br/>
@@ -22,7 +22,7 @@
           </div>
           <div style="float:right">
           <h3>Click on one of the four GIFs that best describes the right most image.</h3>
-          <h4>(dominent / in control of the situation / powerful / influential / important / autonomous)</h4>
+          <h4 id="des-b"></h4>
           <input name="b" type="radio" value="" id="b-A-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-A" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
           <input name="b" type="radio" value="" id="b-B-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-B" onclick="showBorder(this.id)"></video><br/>
@@ -31,7 +31,7 @@
           <input name="b" type="radio" value="" id="b-D-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-D" onclick="showBorder(this.id)"></video>
           </div>
       </fieldset>
-          <input type="hidden" name="dim" value="">
+          <input type="hidden" name="dim" id="dim" value="">
           <p>Note: Two choices cannot be the same! You have to answer both questions!</p>
           <button type="submit" disabled="true">Submit</button>
   </form>
@@ -44,7 +44,21 @@
       var gifC = decodeURI(decodeURIComponent(turkGetParam('gifC', 'Cannot find C')));
       var gifD = decodeURI(decodeURIComponent(turkGetParam('gifD', 'Cannot find D')));
       document.getElementsByTagName("img")[0].src = "../static/SAM-" + dim.toUpperCase() + ".png";
-      document.getElementsByName("dim").value = dim;
+      document.getElementById("dim").value = dim;
+      switch(dim){
+        case "v":
+          document.getElementById("des-w").innerHTML = "(unhappiness / annoyance / negativeness / dissatisfaction / melancholy / despair)"
+          document.getElementById("des-b").innerHTML = "(happiness / pleasure / positiveness / satisfaction / contentedness / hopefulness)"
+          break;
+        case "a":
+          document.getElementById("des-w").innerHTML = "(unarousal / passiveness / relaxation / calmness / sluggishness / dullness / sleepiness)"
+          document.getElementById("des-b").innerHTML = "(arousal / activeness / stimulation / frenzy / jitteriness / alertness)"
+          break;
+        case "d":
+          document.getElementById("des-w").innerHTML = "(submissive / controlled by outside factors / weak / influenced / cared-for / guided)"
+          document.getElementById("des-b").innerHTML = "(dominent / in control of the situation / powerful / influential / important / autonomous)"
+          break;
+      }
       document.getElementById("w-A").src = "../static/" + gifA + ".mp4";
       document.getElementById("w-A-ra").value = gifA;
       document.getElementById("w-B").src = "../static/" + gifB + ".mp4";
