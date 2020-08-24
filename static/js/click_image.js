@@ -1,7 +1,7 @@
 var best, worst;
 
 function showBorder(id){
-    var name = id.slice(0, -2);
+    var name = id.charAt(0);
     var tags = document.getElementsByName(name);
     for (t=0; t<tags.length; t++){
         tag = tags[t]
@@ -20,10 +20,10 @@ function showBorder(id){
     document.getElementById(id).style.borderStyle="solid";
     document.getElementById(raID).checked = true;
 
-    if(name.charAt(2) == "b"){
+    if(name == "b"){
         best = document.getElementById(raID).value;
     }
-    else if(name.charAt(2) == "w"){
+    else if(name == "w"){
         worst = document.getElementById(raID).value;
     }
 
