@@ -13,22 +13,22 @@
           <div style="float:left">
           <h3>Click on one of the four GIFs that best describes the left most image.</h3>
           <h4 id="des-w"></h4>
-          <input name="w" type="radio" value="" id="w-A-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-A" onclick="showBorder(this.id)"></video>
+          <input name="w" type="radio" value="" id="w-A-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-A" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-          <input name="w" type="radio" value="" id="w-B-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-B" onclick="showBorder(this.id)"></video><br/>
-          <input name="w" type="radio" value="" id="w-C-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-C" onclick="showBorder(this.id)"></video>
+          <input name="w" type="radio" value="" id="w-B-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-B" onclick="showBorder(this.id)"></video><br/>
+          <input name="w" type="radio" value="" id="w-C-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-C" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-          <input name="w" type="radio" value="" id="w-D-ra"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-D" onclick="showBorder(this.id)"></video>
+          <input name="w" type="radio" value="" id="w-D-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="w" id="w-D" onclick="showBorder(this.id)"></video>
           </div>
           <div style="float:right">
           <h3>Click on one of the four GIFs that best describes the right most image.</h3>
           <h4 id="des-b"></h4>
-          <input name="b" type="radio" value="" id="b-A-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-A" onclick="showBorder(this.id)"></video>
+          <input name="b" type="radio" value="" id="b-A-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-A" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-          <input name="b" type="radio" value="" id="b-B-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-B" onclick="showBorder(this.id)"></video><br/>
-          <input name="b" type="radio" value="" id="b-C-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-C" onclick="showBorder(this.id)"></video>
+          <input name="b" type="radio" value="" id="b-B-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-B" onclick="showBorder(this.id)"></video><br/>
+          <input name="b" type="radio" value="" id="b-C-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-C" onclick="showBorder(this.id)"></video>
           <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-          <input name="b" type="radio" value="" id="b-D-ra"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-D" onclick="showBorder(this.id)"></video>
+          <input name="b" type="radio" value="" id="b-D-ra" onclick="radio(this.id)"/><video src="" playsinline autoplay muted loop width=200px name="b" id="b-D" onclick="showBorder(this.id)"></video>
           </div>
       </fieldset>
           <input type="hidden" name="dim" id="dim" value="">
@@ -43,7 +43,7 @@
       var gifB = decodeURI(decodeURIComponent(turkGetParam('gifB', 'Cannot find B')));
       var gifC = decodeURI(decodeURIComponent(turkGetParam('gifC', 'Cannot find C')));
       var gifD = decodeURI(decodeURIComponent(turkGetParam('gifD', 'Cannot find D')));
-      document.getElementsByTagName("img")[0].src = "../static/SAM-" + dim.toUpperCase() + ".png";
+      document.getElementsByTagName("img")[0].src = "../static/sam/SAM-" + dim.toUpperCase() + ".png";
       document.getElementById("dim").value = dim;
       switch(dim){
         case "v":
@@ -59,21 +59,21 @@
           document.getElementById("des-b").innerHTML = "(dominent / in control of the situation / powerful / influential / important / autonomous)"
           break;
       }
-      document.getElementById("w-A").src = "../static/" + gifA + ".mp4";
+      document.getElementById("w-A").src = "../static/gif-10/" + gifA + ".mp4";
       document.getElementById("w-A-ra").value = gifA;
-      document.getElementById("w-B").src = "../static/" + gifB + ".mp4";
+      document.getElementById("w-B").src = "../static/gif-10/" + gifB + ".mp4";
       document.getElementById("w-B-ra").value = gifB;
-      document.getElementById("w-C").src = "../static/" + gifC + ".mp4";
+      document.getElementById("w-C").src = "../static/gif-10/" + gifC + ".mp4";
       document.getElementById("w-C-ra").value = gifC;
-      document.getElementById("w-D").src = "../static/" + gifD + ".mp4";
+      document.getElementById("w-D").src = "../static/gif-10/" + gifD + ".mp4";
       document.getElementById("w-D-ra").value = gifD;
-      document.getElementById("b-A").src = "../static/" + gifA + ".mp4";
+      document.getElementById("b-A").src = "../static/gif-10/" + gifA + ".mp4";
       document.getElementById("b-A-ra").value = gifA;
-      document.getElementById("b-B").src = "../static/" + gifB + ".mp4";
+      document.getElementById("b-B").src = "../static/gif-10/" + gifB + ".mp4";
       document.getElementById("b-B-ra").value = gifB;
-      document.getElementById("b-C").src = "../static/" + gifC + ".mp4";
+      document.getElementById("b-C").src = "../static/gif-10/" + gifC + ".mp4";
       document.getElementById("b-C-ra").value = gifC;
-      document.getElementById("b-D").src = "../static/" + gifD + ".mp4";
+      document.getElementById("b-D").src = "../static/gif-10/" + gifD + ".mp4";
       document.getElementById("b-D-ra").value = gifD;
     }
   </script>

@@ -1,5 +1,10 @@
 var best, worst;
 
+function radio(id){
+    var imgID = id.slice(0, -3);
+    showBorder(imgID);
+}
+
 function showBorder(id){
     var name = id.charAt(0);
     var tags = document.getElementsByName(name);
