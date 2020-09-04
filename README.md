@@ -1,2 +1,2 @@
 # VAD-questionnaire
-4-tuples are generated with script from https://www.saifmohammad.com/WebPages/BestWorst.html
+The purpose of this repository is to run https://www.saifmohammad.com/WebPages/BestWorst.html analysis for future research use.
